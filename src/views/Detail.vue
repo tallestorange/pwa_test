@@ -7,14 +7,16 @@
 </template>
 
 <script>
-import articles from '../assets/articles.json'
-
   export default {
     components: {
     },
+    computed: {
+      articles() {
+        return this.$store.state.articles
+      }
+    },
     data () {
       return {
-          articles: articles
       }
     }
   }

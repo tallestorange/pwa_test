@@ -12,15 +12,18 @@
 
 <script>
 import ProblemCard from '../components/ProblemCard.vue'
-import articles from '../assets/articles.json'
 
   export default {
     components: {
       ProblemCard
     },
+    computed: {
+      articles() {
+        return this.$store.state.articles
+      }
+    },
     data () {
       return {
-        articles: articles
       }
     }
   }
