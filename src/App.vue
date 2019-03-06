@@ -5,6 +5,12 @@
       <v-toolbar-title class="headline text-uppercase">
         <span class="font-weight-light">competitive programming</span>
       </v-toolbar-title>
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>search</v-icon>
+      </v-btn>
+
     </v-toolbar>
 
     <v-navigation-drawer v-model="drawer" temporary absolute>
