@@ -12,7 +12,7 @@
 
 <script>
 import ProblemCard from '../components/ProblemCard.vue'
-import articles from '../articles.json'
+import articles from '../assets/articles.json'
 
   export default {
     components: {
