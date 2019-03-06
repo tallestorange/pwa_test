@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Detail from './views/Detail.vue'
 
+document.title = "Competitive Programming"
 Vue.use(Router)
 
 export default new Router({
@@ -11,11 +12,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Home
+      component: Home,
+      meta: {
+        title: 'a'
+      }
     },
     {
       path: '/posts/:value',
-      component: Detail
+      component: Detail,
+      meta: {
+        title: 'a'
+      }
     }
   ]
 })

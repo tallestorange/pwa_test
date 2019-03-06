@@ -1,8 +1,35 @@
 <template>
   <v-content>
-  <div>
-    {{articles[$route.params.value]}}
-  </div>
+
+    <v-layout justify-center>
+      <v-flex xs11 sm9 md7>
+        <!-- {{articles[$route.params.value]}} -->
+        <v-expansion-panel>
+
+          <v-expansion-panel-content>
+            <div slot="header">アルゴリズム</div>
+            <v-card>
+              <v-layout row>
+                <div v-for="tag in article.algorithms">
+                  <v-chip color="primary">{{tag}}</v-chip>
+                </div>
+              </v-layout>
+            </v-card>
+          </v-expansion-panel-content>
+
+          <v-expansion-panel-content>
+            <div slot="header">計算量</div>
+            <v-card>
+              <v-layout row>
+                <v-chip color="primary">{{article.order}}</v-chip>
+              </v-layout>
+            </v-card>
+          </v-expansion-panel-content>
+
+        </v-expansion-panel>
+      </v-flex>
+    </v-layout>
+
   </v-content>
 </template>
 
@@ -11,8 +38,8 @@
     components: {
     },
     computed: {
-      articles() {
-        return this.$store.state.articles
+      article() {
+        return this.$store.state.articles[this.$route.params.value]
       }
     },
     data () {

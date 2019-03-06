@@ -24,6 +24,7 @@ export default {
       }
       else {
         this.$store.commit("isNotAtHome")
+        console.log(this.$router.meta)
       }
     }
   }
