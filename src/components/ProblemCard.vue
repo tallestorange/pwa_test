@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card @click="clickProblem(article.filename)">
     <v-layout row>
       <v-card-title primary-title>
         <div class="headline font-weight-bold">{{article.title}}</div>
@@ -30,7 +30,12 @@
   export default {
     data: () => ({
     }),
-    props: ['article']
+    props: ['article'],
+    methods: {
+      clickProblem: function(name) {
+        this.$router.push({ path: `/posts/${name}` })
+      }
+    }
   }
 </script>
 

@@ -3,7 +3,7 @@
     <v-toolbar app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="headline text-uppercase">
-        <span class="font-weight-light">competitive programming</span>
+        <span class="font-weight-light">きょうぷろ!</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -13,23 +13,22 @@
 
     </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer" temporary absolute>
+    <v-navigation-drawer app v-model="drawer">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+
       <v-list>
-        <!-- <template v-for="(item, index) in items">
-          <v-list-tile :href="item.href" :to="{name: item.href}" :key="index">
-            <v-list-tile-action>
-              <v-icon light v-html="item.icon"></v-icon>
-            </v-list-tile-action>
+        <template>
+          <v-list-tile  key="0" to="/">
             <v-list-tile-content>
-              <v-list-tile-title v-html="item.title"></v-list-tile-title>
+              <v-list-tile-title>競技プログラミング</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-        </template> -->
+        </template>
       </v-list>
+      
     </v-navigation-drawer>
 
-    <router-view />
+    <router-view></router-view>
 
   </v-app>
 </template>

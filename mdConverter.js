@@ -6,7 +6,7 @@ const path = require('path')
 const article_path = path.join(process.cwd(), 'articles')
 const json_path = path.join(process.cwd(), 'src', 'assets', 'json')
 
-var headers = []
+var headers = {}
 var algorithms = new Set()
 var scores = new Set()
 var orders = new Set()
@@ -24,7 +24,7 @@ fs.readdir(article_path, function(err, files){
         const fullPath = path.join(article_path, filename)
         const msg = fs.readFileSync(fullPath, 'utf-8')
         const md = new MarkdownIt()
-        const jsonFileName = path.parse(filename).name + '.json'
+        const jsonFileName = path.parse(filename).name
         md.use(meta)
 
         const doc = md.render(msg)
@@ -43,7 +43,7 @@ fs.readdir(article_path, function(err, files){
             orders.add(metadata.order)
         }
 
-        headers.push(metadata)        
+        headers[jsonFileName] = metadata        
 
         try {
             const target = path.join(json_path, jsonFileName)

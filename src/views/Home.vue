@@ -1,8 +1,8 @@
 <template>
   <v-content>
       <v-layout justify-center>
-      <v-flex xs11 sm7>
-        <div v-for="article in articles" style="margin: 5px;">
+      <v-flex xs11 sm9 md7>
+        <div v-for="article in articles" style="margin: 8px;">
           <problem-card :article="article"></problem-card>
         </div>
       </v-flex>
@@ -19,9 +19,9 @@ import articles from '../assets/articles.json'
       ProblemCard
     },
     data () {
-    return {
-      articles: articles
+      return {
+        articles: articles
+      }
     }
-  }
   }
 </script>
