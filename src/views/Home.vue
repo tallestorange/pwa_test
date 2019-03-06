@@ -1,13 +1,27 @@
 <template>
-  <HelloWorld />
+  <v-content>
+      <v-layout justify-center>
+      <v-flex xs11 sm7>
+        <div v-for="article in articles" style="margin: 5px;">
+          <problem-card :article="article"></problem-card>
+        </div>
+      </v-flex>
+      </v-layout>
+    </v-content>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import ProblemCard from '../components/ProblemCard.vue'
+import articles from '../articles.json'
 
   export default {
     components: {
-      HelloWorld
+      ProblemCard
+    },
+    data () {
+    return {
+      articles: articles
     }
+  }
   }
 </script>
