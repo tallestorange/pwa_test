@@ -1,4 +1,4 @@
 module.exports = {
-  baseUrl: "/pwa_test/",
+  publicPath: "/pwa_test/",
   outputDir: 'docs',
 };
