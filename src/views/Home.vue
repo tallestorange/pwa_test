@@ -1,4 +1,5 @@
 <template>
+  
   <v-content>
     <v-layout justify-center>
       <v-flex xs11 sm9 md7>
@@ -8,6 +9,7 @@
       </v-flex>
     </v-layout>
   </v-content>
+  
 </template>
 
 <script>

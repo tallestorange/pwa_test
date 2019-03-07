@@ -1,6 +1,6 @@
 <template>
+  <transition name="fade">
   <v-content>
-
     <v-layout justify-center>
       <v-flex xs11 sm9 md7>
         <v-expansion-panel>
@@ -43,6 +43,7 @@
     </v-layout>
 
   </v-content>
+  </transition>
 </template>
 
 <script>
@@ -73,3 +74,13 @@
     
   }
 </script>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  will-change: opacity;
+  transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+</style>
