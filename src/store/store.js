@@ -34,6 +34,7 @@ export default new Vuex.Store({
       }
       await axios.get(name)
       .then((res) => {
+        console.log(res)
         payload.article = res.data
       })
       context.commit('getArticle', payload)
