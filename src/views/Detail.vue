@@ -47,7 +47,7 @@
     computed: {
       article() {
         const content = this.$store.state.articles[this.$route.params.value]
-        this.$store.dispatch('getArticleAction',{name: process.env.BASE_URL + content.filename + '.json'})
+        this.$store.dispatch('getArticleAction',{name: process.env.BASE_URL + "json/" + content.filename + '.json'})
         return content
       }
     },
