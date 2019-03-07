@@ -8,6 +8,7 @@ order: "O(H^2W^2)"
 contest: "ARC"
 difficulty: 3.0
 importance: 3.5
+url: "https://atcoder.jp/contests/arc031/tasks/arc031_2"
 ---
 
 ## 問題

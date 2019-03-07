@@ -8,6 +8,7 @@ order: "O(|S|)"
 contest: "ABC"
 difficulty: 2.5
 importance: 3.5
+url: "https://atcoder.jp/contests/abc064/tasks/abc064_d"
 ---
 
 ## 問題

@@ -8,6 +8,7 @@ order: "O(4^N)"
 contest: "ABC"
 difficulty: 3.5
 importance: 2.5
+url: "https://atcoder.jp/contests/abc119/tasks/abc119_c"
 ---
 
 ## 問題

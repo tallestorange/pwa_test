@@ -8,6 +8,7 @@ order: "O(N)"
 contest: "ABC"
 difficulty: 3.5
 importance: 4.0
+url: "https://atcoder.jp/contests/abc070/tasks/abc070_d"
 ---
 
 ## 問題

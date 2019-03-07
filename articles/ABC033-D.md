@@ -8,6 +8,7 @@ order: "O(N^2logN)"
 contest: "ABC"
 difficulty: 4.5
 importance: 3.5
+url: "https://atcoder.jp/contests/abc033/tasks/abc033_d"
 ---
 
 ## 問題

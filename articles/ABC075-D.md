@@ -8,6 +8,7 @@ order: "O(N^5)"
 contest: "ABC"
 difficulty: 2.5
 importance: 4.0
+url: "https://atcoder.jp/contests/abc075/tasks/abc075_d"
 ---
 
 ## 問題

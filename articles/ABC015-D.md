@@ -8,6 +8,7 @@ order: "O(N^3)"
 contest: "ABC"
 difficulty: 4.0
 importance: 4.5
+url: "https://atcoder.jp/contests/abc015/tasks/abc015_4"
 ---
 
 ## 問題

@@ -8,6 +8,7 @@ order: "O(NlogN)"
 contest: "ABC"
 difficulty: 3.0
 importance: 4.0
+url: "https://atcoder.jp/contests/abc064/tasks/abc065_d"
 ---
 
 ## 問題
