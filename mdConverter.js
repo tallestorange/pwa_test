@@ -4,7 +4,7 @@ const meta = require('markdown-it-meta')
 const path = require('path')
 
 const article_path = path.join(process.cwd(), 'articles')
-const json_path = path.join(process.cwd(), 'src', 'store', 'json')
+const json_path = path.join(process.cwd(), 'public', 'json')
 
 var headers = {}
 var algorithms = new Set()
@@ -46,7 +46,7 @@ fs.readdir(article_path, function(err, files){
         headers[jsonFileName] = metadata        
 
         try {
-            const target = path.join(json_path, jsonFileName)
+            const target = path.join(json_path, jsonFileName+'.json')
             fs.writeFileSync(target,JSON.stringify(fulldata))
         }catch(e){
             console.log(e)
@@ -61,14 +61,14 @@ fs.readdir(article_path, function(err, files){
     searchTag["orders"] = ordersArray
 
     try {
-        const target = path.join(process.cwd(), 'src', 'store', 'articles.json')
+        const target = path.join(process.cwd(), 'src', 'assets', 'articles.json')
         fs.writeFileSync(target,JSON.stringify(headers))
     }catch(e){
         console.log(e)
     }
 
     try {
-        const target = path.join(process.cwd(), 'src', 'store', 'searchtag.json')
+        const target = path.join(process.cwd(), 'src', 'assets', 'searchtag.json')
         fs.writeFileSync(target,JSON.stringify(searchTag))
     }catch(e){
         console.log(e)

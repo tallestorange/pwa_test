@@ -34,12 +34,14 @@
 </template>
 
 <script>
+
   export default {
     components: {
     },
     computed: {
       article() {
-        return this.$store.state.articles[this.$route.params.value]
+        const content = this.$store.state.articles[this.$route.params.value]
+        return content
       }
     },
     data () {

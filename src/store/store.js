@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import articles from './articles.json'
+import articles from '../assets/articles.json'
 // import { stat } from 'fs';
 
 Vue.use(Vuex)
