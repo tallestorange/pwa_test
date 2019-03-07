@@ -28,11 +28,13 @@
           <v-expansion-panel-content>
             <div slot="header">解説</div>
             <v-card>
-              {{this.$store.getters.getArticle()}}
+              <div v-html="this.$store.getters.getArticle()"></div>
             </v-card>
           </v-expansion-panel-content>
 
         </v-expansion-panel>
+        
+
       </v-flex>
     </v-layout>
 
