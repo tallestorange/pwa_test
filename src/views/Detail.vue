@@ -32,6 +32,10 @@
             </v-card>
           </v-expansion-panel-content>
 
+          <div>
+            <v-btn round color="primary">問題を見る</v-btn>
+          </div>
+
         </v-expansion-panel>
         
 
