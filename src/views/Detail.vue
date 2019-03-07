@@ -3,7 +3,6 @@
 
     <v-layout justify-center>
       <v-flex xs11 sm9 md7>
-        <!-- {{articles[$route.params.value]}} -->
         <v-expansion-panel>
 
           <v-expansion-panel-content>
@@ -26,6 +25,13 @@
             </v-card>
           </v-expansion-panel-content>
 
+          <v-expansion-panel-content>
+            <div slot="header">解説</div>
+            <v-card>
+              {{this.$store.getters.getArticle()}}
+            </v-card>
+          </v-expansion-panel-content>
+
         </v-expansion-panel>
       </v-flex>
     </v-layout>
@@ -41,6 +47,7 @@
     computed: {
       article() {
         const content = this.$store.state.articles[this.$route.params.value]
+        this.$store.dispatch('getArticleAction',{name: process.env.BASE_URL + content.filename + '.json'})
         return content
       }
     },
