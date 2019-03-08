@@ -1,6 +1,7 @@
 <template>
   <div>
     <transition :name="sildeName">
+
       <v-toolbar app :extended="!this.$store.state.ishome">
         <v-toolbar-side-icon v-if="this.$store.state.ishome" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-btn v-else @click.stop="back" icon>
@@ -15,17 +16,18 @@
 
         <v-spacer></v-spacer>
 
-        <v-btn v-if="this.$store.state.ishome" icon>
+        <v-btn v-if="this.$store.state.ishome" icon @click="clickSearch">
           <v-icon>search</v-icon>
         </v-btn>
 
-        
         <template v-if="!this.$store.state.ishome" v-slot:extension>
           <v-spacer></v-spacer>
           <v-toolbar-title>
-            <span class="font-weight-light">{{articles[$route.params.value].title}}</span>
+            <span v-if="($route.path).match(/posts/)" class="font-weight-light">{{articles[$route.params.value].title}}</span>
+            <span v-else class="font-weight-light">検索</span>
           </v-toolbar-title>
         </template>
+
       </v-toolbar>
     </transition>
 
@@ -77,6 +79,9 @@ export default {
   methods: {
     back: function() {
       this.$router.go(-1)
+    },
+    clickSearch: function(name) {
+      this.$router.push({ path: `/search` })
     }
   }
 }

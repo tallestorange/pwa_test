@@ -24,11 +24,21 @@ export default {
     '$route': function (to, from) {
       if (to.path == "/") {
         this.$store.commit("isAtHome")
-        this.transitionName = 'slide-right'
+        if ((from.path).match(/posts/)) {
+          this.transitionName = 'slide-right'
+        }
+        else {
+          this.transitionName = 'slide-down'
+        }
       }
       else {
         this.$store.commit("isNotAtHome")
-        this.transitionName = 'slide-left'
+        if ((to.path).match(/posts/)) {
+          this.transitionName = 'slide-left'
+        }
+        else {
+          this.transitionName = 'slide-up'
+        }
       }
     }
   }
@@ -52,6 +62,24 @@ export default {
 
 .slide-right-enter, .slide-right-leave-to {
   transform: translateX(100vw) translateX(0px);
+}
+
+.slide-up-enter-active, .slide-up-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.slide-up-enter, .slide-up-leave-to {
+  transform: translateY(100vw) translateY(0px);
+}
+
+.slide-down-enter-active, .slide-down-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.slide-down-enter, .slide-down-leave-to {
+  transform: translateY(-100vw) translateY(0px);
 }
 
 </style>

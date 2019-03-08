@@ -1,5 +1,4 @@
 <template>
-  <!-- <transition name="fade"> -->
   <v-content>
     <v-layout justify-center>
       <v-flex xs11 sm9 md7>
@@ -43,7 +42,6 @@
     </v-layout>
 
   </v-content>
-  <!-- </transition> -->
 </template>
 
 <script>
@@ -71,6 +69,5 @@
       return {
       }
     }
-    
   }
 </script>
