@@ -1,38 +1,35 @@
 <template>
   <div>
     <transition :name="sildeName">
-    <v-toolbar app :extended="!this.$store.state.ishome">
-      <v-toolbar-side-icon v-if="this.$store.state.ishome" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn v-else @click.stop="back" icon>
-        <v-icon>arrow_back</v-icon>
-      </v-btn>
+      <v-toolbar app :extended="!this.$store.state.ishome">
+        <v-toolbar-side-icon v-if="this.$store.state.ishome" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-btn v-else @click.stop="back" icon>
+          <v-icon>arrow_back</v-icon>
+        </v-btn>
 
-      <div v-if="this.$store.state.ishome">
-        <v-toolbar-title>
-          <span class="font-weight-light">競プロ</span>
-        </v-toolbar-title>
-      </div>
+        <div v-if="this.$store.state.ishome">
+          <v-toolbar-title>
+            <span class="font-weight-light">競プロ</span>
+          </v-toolbar-title>
+        </div>
 
-      <v-spacer></v-spacer>
-
-      <v-btn v-if="this.$store.state.ishome" icon>
-        <v-icon>search</v-icon>
-      </v-btn>
-
-      
-      <template v-if="!this.$store.state.ishome" v-slot:extension>
         <v-spacer></v-spacer>
-        <v-toolbar-title>
-          <span class="font-weight-light">{{articles[$route.params.value].title}}</span>
-        </v-toolbar-title>
-      </template>
-     
 
+        <v-btn v-if="this.$store.state.ishome" icon>
+          <v-icon>search</v-icon>
+        </v-btn>
 
-    </v-toolbar>
+        
+        <template v-if="!this.$store.state.ishome" v-slot:extension>
+          <v-spacer></v-spacer>
+          <v-toolbar-title>
+            <span class="font-weight-light">{{articles[$route.params.value].title}}</span>
+          </v-toolbar-title>
+        </template>
+      </v-toolbar>
     </transition>
 
-    <v-navigation-drawer app v-model="drawer">
+    <v-navigation-drawer app v-model="drawer" temporary absolute>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
       <v-list>
