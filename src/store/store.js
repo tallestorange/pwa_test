@@ -2,12 +2,14 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import articles from '../assets/articles.json'
 import axios from 'axios'
+import { stat } from 'fs';
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     ishome: true,
+    isDark: true,
     articles: articles,
     article: '',
   },
@@ -22,6 +24,9 @@ export default new Vuex.Store({
     },
     isAtHome(state) {
       state.ishome = true
+    },
+    changeTheme(state) {
+      state.isDark = !state.isDark
     },
     getArticle(state, payload) {
       state.article = payload.article

@@ -35,15 +35,40 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
       <v-list>
-        <template>
-          <v-list-tile to="/">
-            <v-list-tile-content>
-              <v-list-tile-title>競プロ</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </template>
+        <v-list-tile to="/">
+          <v-list-tile-content>
+            <v-list-tile-title>ホーム</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-divider></v-divider>
+
+        <v-list-tile @click="clickLink('https://atcoder.jp/?lang=ja')">
+          <v-list-tile-content>
+            <v-list-tile-title>AtCoder</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile @click="clickLink('https://kenkoooo.com/atcoder/')">
+          <v-list-tile-content>
+            <v-list-tile-title>AtCoder Problems</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-divider></v-divider>
+
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-list-tile-title>夜間モード</v-list-tile-title>
+          </v-list-tile-content>
+          <v-list-tile-action>
+            <v-switch v-model="nightMode">
+            </v-switch>
+          </v-list-tile-action>
+        </v-list-tile>
+
       </v-list>
-      
+
     </v-navigation-drawer>
   </div>
 </template>
@@ -55,7 +80,8 @@ export default {
   data () {
     return {
       sildeName: "slide-down",
-      drawer: false
+      drawer: false,
+      nightMode: true
     }
   },
   computed: {
@@ -73,15 +99,20 @@ export default {
         this.$store.commit("isNotAtHome")
         this.sildeName = "slide-up"
       }
-
+    },
+    'nightMode': function(to, from) {
+      this.$store.commit("changeTheme")
     }
   },
   methods: {
     back: function() {
       this.$router.go(-1)
     },
-    clickSearch: function(name) {
+    clickSearch: function() {
       this.$router.push({ path: `/search` })
+    },
+    clickLink: function(url) {
+      window.open(url)
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app :dark="this.$store.state.isDark">
     <tool-bar></tool-bar>
     <transition :name="transitionName">
       <router-view/>
