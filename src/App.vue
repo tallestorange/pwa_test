@@ -36,14 +36,22 @@ export default {
 </script>
 
 <style>
-.slide-left-enter, .slide-right-leave-active {
-  opacity: 0;
-  -webkit-transform: translate(30px, 0);
-  transform: translate(50px, 0);
+.slide-left-enter-active, .slide-left-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
 }
-.slide-left-leave-active, .slide-right-enter {
-  opacity: 0;
-  -webkit-transform: translate(-30px, 0);
-  transform: translate(-50px, 0);
+
+.slide-left-enter, .slide-left-leave-to {
+  transform: translateX(-100vw) translateX(0px);
 }
+
+.slide-right-enter-active, .slide-right-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.slide-right-enter, .slide-right-leave-to {
+  transform: translateX(100vw) translateX(0px);
+}
+
 </style>
