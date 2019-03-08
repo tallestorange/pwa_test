@@ -1,5 +1,5 @@
 <template>
-  <v-app :dark="this.$store.state.isDark">
+  <v-app :dark="this.$store.getters['darkColor']">
     <tool-bar></tool-bar>
     <transition :name="transitionName">
       <router-view/>

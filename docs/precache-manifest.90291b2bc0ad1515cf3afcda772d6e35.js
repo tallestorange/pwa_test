@@ -1,27 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "d2c03fa8af019f7bf400",
+    "revision": "32ab4a71c02fe891eb16",
     "url": "/pwa_test/css/app.cd647187.css"
   },
   {
-    "revision": "d2c03fa8af019f7bf400",
-    "url": "/pwa_test/js/app.6b51027e.js"
+    "revision": "32ab4a71c02fe891eb16",
+    "url": "/pwa_test/js/app.37fc43a0.js"
   },
   {
-    "revision": "a8aa15cd7936d04b45a1",
+    "revision": "c9a5013fa306cf789bf7",
     "url": "/pwa_test/css/chunk-vendors.42bf3134.css"
   },
   {
-    "revision": "a8aa15cd7936d04b45a1",
-    "url": "/pwa_test/js/chunk-vendors.2b9ffcd5.js"
+    "revision": "c9a5013fa306cf789bf7",
+    "url": "/pwa_test/js/chunk-vendors.b147f754.js"
   },
   {
-    "revision": "e6cd3461883a77610f64a2b84b7102e9",
+    "revision": "01b305e23f40a65ea36ddb7ec1c8f9bb",
     "url": "/pwa_test/index.html"
-  },
-  {
-    "revision": "f9b30ebb5cfda3d3abf3986d6b76cefe",
-    "url": "/pwa_test/json/ABC033-D.json"
   },
   {
     "revision": "bbe35b025efb4144ecc882711c235a50",
@@ -32,12 +28,16 @@ self.__precacheManifest = [
     "url": "/pwa_test/json/ABC064-D.json"
   },
   {
+    "revision": "c4eca64f3af50c57cc365d26b71936cb",
+    "url": "/pwa_test/json/ABC070-D.json"
+  },
+  {
     "revision": "246f260961a2bd1986582579b1092ccc",
     "url": "/pwa_test/json/ABC065-D.json"
   },
   {
-    "revision": "c4eca64f3af50c57cc365d26b71936cb",
-    "url": "/pwa_test/json/ABC070-D.json"
+    "revision": "f9b30ebb5cfda3d3abf3986d6b76cefe",
+    "url": "/pwa_test/json/ABC033-D.json"
   },
   {
     "revision": "6cb83aacb2b98cf060d5ac26f7aee665",

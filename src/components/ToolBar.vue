@@ -81,7 +81,7 @@ export default {
     return {
       sildeName: "slide-down",
       drawer: false,
-      nightMode: true
+      nightMode: this.$store.getters['darkColor']
     }
   },
   computed: {
