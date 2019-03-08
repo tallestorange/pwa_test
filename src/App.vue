@@ -1,12 +1,9 @@
 <template>
   <v-app dark>
-    
     <tool-bar></tool-bar>
-
     <transition :name="transitionName">
       <router-view/>
     </transition>
-
   </v-app>
 </template>
 
@@ -42,11 +39,11 @@ export default {
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;
   -webkit-transform: translate(30px, 0);
-  transform: translate(30px, 0);
+  transform: translate(50px, 0);
 }
 .slide-left-leave-active, .slide-right-enter {
   opacity: 0;
   -webkit-transform: translate(-30px, 0);
-  transform: translate(-30px, 0);
+  transform: translate(-50px, 0);
 }
 </style>
