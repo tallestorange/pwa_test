@@ -21,7 +21,7 @@ import ProblemCard from '../components/ProblemCard.vue'
     },
     computed: {
       articles() {
-        return this.$store.state.articles
+        return this.$store.getters['getArticles']
       }
     },
     data () {

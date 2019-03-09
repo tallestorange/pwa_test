@@ -27,7 +27,7 @@
           <v-expansion-panel-content>
             <div slot="header">解説</div>
             <v-card>
-              <div v-html="this.$store.getters.getArticle()"></div>
+              <div v-html="this.$store.getters['getArticle']"></div>
             </v-card>
           </v-expansion-panel-content>
 

@@ -24,7 +24,7 @@
           <v-spacer></v-spacer>
           <v-toolbar-title>
             <span v-if="($route.path).match(/posts/)" class="font-weight-light">{{articles[$route.params.value].title}}</span>
-            <span v-else class="font-weight-light">検索</span>
+            <span v-else class="font-weight-light">問題検索</span>
           </v-toolbar-title>
         </template>
 

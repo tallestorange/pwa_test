@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import articles from '../assets/articles.json'
+import searchtag from '../assets/searchtag.json'
 import axios from 'axios'
 
 Vue.use(Vuex)
@@ -10,11 +11,18 @@ export default new Vuex.Store({
     ishome: true,
     isDark: true,
     articles: articles,
+    searchtag: searchtag,
     article: '',
   },
   getters: {
-    getArticle: (state, getters) => () => {
+    getArticle: (state, getters) => {
       return state.article.html
+    },
+    getSearchtags: (state, getters) => {
+      return state.searchtag
+    },
+    getArticles: (state, getters) => {
+      return state.articles
     },
     darkColor: (state, getters) => {
       if (localStorage.dark == "true") {
@@ -27,7 +35,6 @@ export default new Vuex.Store({
         state.isDark = true
         localStorage.dark = "true"
       }
-      console.log(state.isDark,localStorage.dark)
       return state.isDark
     }
   },
@@ -41,7 +48,6 @@ export default new Vuex.Store({
     changeTheme(state) {
       state.isDark = !state.isDark
       
-      console.log(state.isDark)
       if (state.isDark) {
         localStorage.setItem('dark','true')
       }
@@ -51,7 +57,7 @@ export default new Vuex.Store({
       
       return state.isDark
     },
-    getArticle(state, payload) {
+    loadArticle(state, payload) {
       state.article = payload.article
     }
   },
@@ -64,7 +70,7 @@ export default new Vuex.Store({
       .then((res) => {
         payload.article = res.data
       })
-      context.commit('getArticle', payload)
+      context.commit('loadArticle', payload)
     }
   }
 })
