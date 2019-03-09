@@ -9,7 +9,7 @@
             <v-card>
               <v-layout row>
                 <div v-for="tag in article.algorithms">
-                  <v-chip color="primary">{{tag}}</v-chip>
+                  <v-chip color="primary" text-color="white">{{tag}}</v-chip>
                 </div>
               </v-layout>
             </v-card>
@@ -19,7 +19,7 @@
             <div slot="header">計算量</div>
             <v-card>
               <v-layout row>
-                <v-chip color="primary">{{article.order}}</v-chip>
+                <v-chip color="primary" text-color="white">{{article.order}}</v-chip>
               </v-layout>
             </v-card>
           </v-expansion-panel-content>

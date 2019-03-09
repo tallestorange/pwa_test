@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "4ebd568abb99d1e69fd6",
+    "revision": "9c90af53c40b6e2fa63e",
     "url": "/pwa_test/css/app.cd647187.css"
   },
   {
-    "revision": "4ebd568abb99d1e69fd6",
-    "url": "/pwa_test/js/app.512684ed.js"
+    "revision": "9c90af53c40b6e2fa63e",
+    "url": "/pwa_test/js/app.3b322eb7.js"
   },
   {
     "revision": "2ad93938355308643483",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/pwa_test/js/chunk-vendors.c65d9f1a.js"
   },
   {
-    "revision": "567cf3c13a07d3af2f9182087ee40cd4",
+    "revision": "db88737f8f4dea25a9d2bab42ac92333",
     "url": "/pwa_test/index.html"
   },
   {
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/pwa_test/json/ABC015-D.json"
   },
   {
-    "revision": "9b8646f54699a6b0115fca309c8f15e4",
-    "url": "/pwa_test/json/ABC064-D.json"
-  },
-  {
     "revision": "f9b30ebb5cfda3d3abf3986d6b76cefe",
     "url": "/pwa_test/json/ABC033-D.json"
+  },
+  {
+    "revision": "9b8646f54699a6b0115fca309c8f15e4",
+    "url": "/pwa_test/json/ABC064-D.json"
   },
   {
     "revision": "246f260961a2bd1986582579b1092ccc",
