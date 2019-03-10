@@ -27,20 +27,21 @@ import ProblemCard from '../components/ProblemCard.vue'
         var results = {}
 
         for (var key in this.$store.state.articles) {
-          var value = this.$store.state.articles[key]
-          if (this.searchOprion.order != "" && value.order != this.searchOprion.order) {
+          var article = this.$store.state.articles[key]
+          if (this.searchOprion.order != "" && article.order != this.searchOprion.order) {
             continue
           }
           var isCheckPassed = true
-          for (var algo in this.searchOprion.algorithms) {
-            console.log(value.algorithms,algo,this.searchOprion.algorithms)
-            if (value.algorithms.indexOf(algo) == -1) {
+          for (var algo_key in this.searchOprion.algorithms) {
+            var algo = this.searchOprion.algorithms[algo_key]
+          
+            if (article.algorithms.indexOf(algo) == -1) {
               isCheckPassed = false
               break
             }
           }
           if (isCheckPassed == true) {
-            results[key] = value
+            results[key] = article
           }
         }
 
