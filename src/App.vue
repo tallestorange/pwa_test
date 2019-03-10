@@ -28,7 +28,7 @@ export default {
           this.transitionName = 'slide-right'
         }
         else {
-          this.transitionName = 'slide-down'
+          this.transitionName = 'slide-up'
         }
       }
       else {
@@ -37,7 +37,7 @@ export default {
           this.transitionName = 'slide-left'
         }
         else {
-          this.transitionName = 'slide-up'
+          this.transitionName = 'slide-down'
         }
       }
     }

@@ -1,12 +1,12 @@
 <template>
-  <v-content >
+  <v-content>
     <v-layout justify-center>
       <v-flex xs10 sm9 md7 class="mt-3 mb-3">
 
         <v-combobox
           label="計算量"
           :items="this.$store.getters['getSearchtags'].orders"
-          v-model="orders"
+          v-model="order"
           type="button"
         >
         </v-combobox>
@@ -49,7 +49,7 @@
   export default {
     data () {
       return {
-        orders:[],
+        order:"",
         algorithms:[]
       }
     },
@@ -59,7 +59,8 @@
         if (index >= 0) this.algorithms.splice(index, 1)
       },
       clickSearch: function() {
-        console.log(this.orders,this.algorithms)
+        this.$store.commit("setSearchOptions", {"order":this.order, "algorithms":this.algorithms})
+        this.$router.push({ path: `/search/result` })
       }
     }
   }

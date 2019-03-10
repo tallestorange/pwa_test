@@ -10,9 +10,11 @@ export default new Vuex.Store({
   state: {
     ishome: true,
     isDark: true,
+    order: "",
+    algorithms: [],
     articles: articles,
     searchtag: searchtag,
-    article: '',
+    article: "",
   },
   getters: {
     getArticle: (state, getters) => {
@@ -20,6 +22,9 @@ export default new Vuex.Store({
     },
     getSearchtags: (state, getters) => {
       return state.searchtag
+    },
+    getSearchOptions: (state, getters) => {
+      return {"order":state.order,"algorithms":state.algorithms}
     },
     getArticles: (state, getters) => {
       return state.articles
@@ -57,8 +62,12 @@ export default new Vuex.Store({
       
       return state.isDark
     },
-    loadArticle(state, payload) {
+    setArticle(state, payload) {
       state.article = payload.article
+    },
+    setSearchOptions(state, payload) {
+      state.order = payload.order
+      state.algorithms = payload.algorithms
     }
   },
   actions: {
@@ -70,7 +79,7 @@ export default new Vuex.Store({
       .then((res) => {
         payload.article = res.data
       })
-      context.commit('loadArticle', payload)
+      context.commit("setArticle", payload)
     }
   }
 })
