@@ -12,25 +12,28 @@ import ToolBar from './components/ToolBar.vue'
 
 export default {
   name: 'App',
-  mounted () {
-    document.addEventListener('SWUpdated', this.showRefreshUI);
-  },
-  beforeDestroy () {
-    document.removeEventListener('SWUpdated', this.showRefreshUI);
-  },
-  methods: {
-    showRefreshUI () {
-      // My code to show the refresh UI banner/snackbar goes here.
-      console.log("アップデートがあるようです")
-    },
-  },
   components: {
     ToolBar
   },
   data () {
     return {
-      transitionName: 'slide-left'
+      transitionName: 'slide-left',
+      registration: null
     }
+  },
+  mounted () {
+    document.addEventListener('swUpdated', this.showRefreshUI)
+  },
+  beforeDestroy () {
+    document.removeEventListener('swUpdated', this.showRefreshUI)
+  },
+  methods: {
+    showRefreshUI (e) {
+      // this.registration = e.detail
+      // My code to show the refresh UI banner/snackbar goes here.
+      console.log("アップデートがあるようです")
+      console.log(e.detail)
+    },
   },
   watch: {
     '$route': function (to, from) {
