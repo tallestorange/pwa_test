@@ -3,10 +3,10 @@ import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store/store'
+const updateEvent = new Event('SWUpdated')
 import './registerServiceWorker'
 import { sync } from 'vuex-router-sync'
 
-const updateEvent = new Event('SWUpdated')
 Vue.config.productionTip = false
 sync(store, router)
 

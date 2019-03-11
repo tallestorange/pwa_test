@@ -68,6 +68,14 @@
           </v-list-tile-action>
         </v-list-tile>
 
+        <v-divider></v-divider>
+
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-list-tile-title>Version: 0.0.1b</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
       </v-list>
 
     </v-navigation-drawer>
