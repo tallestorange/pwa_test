@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/",
+  publicPath: "/pwa_test/",
   outputDir: 'docs',
   pwa: {
     // configure the workbox plugin

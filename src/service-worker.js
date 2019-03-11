@@ -11,12 +11,6 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
-
-importScripts(
-  "/precache-manifest.4dc8c8c2f5616cab217ab9824da78591.js"
-);
-
 workbox.core.setCacheNameDetails({prefix: "blog-template"});
 
 /**
