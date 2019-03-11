@@ -12,6 +12,18 @@ import ToolBar from './components/ToolBar.vue'
 
 export default {
   name: 'App',
+  mounted () {
+    document.addEventListener('SWUpdated', this.showRefreshUI);
+  },
+  beforeDestroy () {
+    document.removeEventListener('SWUpdated', this.showRefreshUI);
+  },
+  methods: {
+    showRefreshUI () {
+      // My code to show the refresh UI banner/snackbar goes here.
+      console.log("アップデートがあるようです")
+    },
+  },
   components: {
     ToolBar
   },

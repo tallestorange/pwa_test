@@ -6,6 +6,7 @@ import store from './store/store'
 import './registerServiceWorker'
 import { sync } from 'vuex-router-sync'
 
+const updateEvent = new Event('SWUpdated')
 Vue.config.productionTip = false
 sync(store, router)
 

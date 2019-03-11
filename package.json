@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "node mdConverter.js && vue-cli-service serve",
-    "build": "node mdConverter.js && vue-cli-service build --mode production",
+    "build": "node mdConverter.js && vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
