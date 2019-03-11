@@ -1,5 +1,3 @@
-importScripts("/pwa_test/precache-manifest.5e472a91e5b3ea016ab9ad1783211b1f.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
-
 /**
  * Welcome to your Workbox-powered service worker!
  *
@@ -13,7 +11,16 @@ importScripts("/pwa_test/precache-manifest.5e472a91e5b3ea016ab9ad1783211b1f.js",
  * See https://goo.gl/2aRDsh
  */
 
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+
+importScripts(
+  "/pwa_test/precache-manifest.91fb10863b2efb8d1dfcf523a1dd0fef.js"
+);
+
 workbox.core.setCacheNameDetails({prefix: "blog-template"});
+
+workbox.skipWaiting();
+workbox.clientsClaim();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -23,4 +30,3 @@ workbox.core.setCacheNameDetails({prefix: "blog-template"});
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-
