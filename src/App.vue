@@ -29,13 +29,9 @@ export default {
   },
   methods: {
     showRefreshUI (e) {
-      console.log("アップデートがあるようです")
       this.registration = e.detail
 
       console.log(this.registration)
-
-      this.registration.update()
-      this.registration.skipWaiting()
       
       console.log("アップデート完了")
     },

@@ -24,6 +24,7 @@ if (process.env.NODE_ENV === 'production') {
     },
     updated (registration) {
       console.log('New content is available; please refresh.')
+      self.skipWaiting()
       var UpdatedEvent = new CustomEvent('swUpdated', { detail: registration })
       document.dispatchEvent(UpdatedEvent)
     },
