@@ -1,5 +1,3 @@
-importScripts("/precache-manifest.f67f7f8b5ffa42cd1cfcb974b1b3f2df.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
-
 /**
  * Welcome to your Workbox-powered service worker!
  *
@@ -29,4 +27,3 @@ workbox.core.setCacheNameDetails({prefix: "blog-template"});
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-

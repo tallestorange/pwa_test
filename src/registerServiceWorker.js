@@ -19,6 +19,9 @@ if (process.env.NODE_ENV === 'production') {
     updatefound () {
       console.log('New content is downloading.')
     },
+    install () {
+      skipWaiting()
+    },
     updated (registration) {
       console.log('New content is available; please refresh.')
       var UpdatedEvent = new CustomEvent('swUpdated', { detail: registration })
