@@ -33,8 +33,10 @@ export default {
       this.registration = e.detail
 
       console.log(this.registration)
+
+      this.registration.update()
       this.registration.skipWaiting()
-      // this.registration.update()
+      
       console.log("アップデート完了")
     },
   },
