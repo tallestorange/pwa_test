@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.f67f7f8b5ffa42cd1cfcb974b1b3f2df.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts("/pwa_test/precache-manifest.2d3526311f87819a6620f1f26ec3c564.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 /**
  * Welcome to your Workbox-powered service worker!
@@ -12,12 +12,6 @@ importScripts("/precache-manifest.f67f7f8b5ffa42cd1cfcb974b1b3f2df.js", "https:/
  * and re-run your build process.
  * See https://goo.gl/2aRDsh
  */
-
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
-
-importScripts(
-  "/precache-manifest.4dc8c8c2f5616cab217ab9824da78591.js"
-);
 
 workbox.core.setCacheNameDetails({prefix: "blog-template"});
 
