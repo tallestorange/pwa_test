@@ -29,10 +29,13 @@ export default {
   },
   methods: {
     showRefreshUI (e) {
-      // this.registration = e.detail
-      // My code to show the refresh UI banner/snackbar goes here.
       console.log("アップデートがあるようです")
-      console.log(e.detail)
+      this.registration = e.detail
+
+      console.log(this.registration)
+      this.registration.update()
+      this.registration.skipWaiting()
+      console.log("アップデート完了")
     },
   },
   watch: {
