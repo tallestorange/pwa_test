@@ -1,10 +1,10 @@
 {
-  "name": "vue-cli-3-pwa-sample",
+  "name": "blog-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "node mdConverter.js && vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "node mdConverter.js && vue-cli-service build --mode production",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
