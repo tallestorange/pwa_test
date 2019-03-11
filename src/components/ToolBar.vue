@@ -72,7 +72,7 @@
 
         <v-list-tile>
           <v-list-tile-content>
-            <v-list-tile-title>Version: 0.1.4b</v-list-tile-title>
+            <v-list-tile-title>Version: 0.1.5</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
