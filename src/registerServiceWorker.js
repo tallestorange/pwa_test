@@ -22,7 +22,9 @@ if (process.env.NODE_ENV === 'production') {
     updated (registration) {
       console.log('New content is available; please refresh.')
       console.log(registration)
-      document.dispatchEvent(updateEvent)
+      registration.update()
+      console.log("アップデート完了")
+      // document.dispatchEvent(updateEvent)
     },
     offline () {
       console.log('No internet connection found. App is running in offline mode.')
