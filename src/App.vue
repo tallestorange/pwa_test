@@ -3,7 +3,7 @@
   <v-app :dark="this.$store.getters['darkColor']">
     <tool-bar></tool-bar>
     
-      <transition :name="transitionName">
+      <transition appear :name="transitionName">
       <router-view></router-view>
       </transition>
   </v-app>
@@ -44,25 +44,37 @@ export default {
       console.log(from.path,to.path)
       if (to.path == "/") {
         this.$store.commit("isAtHome")
-        
-        if ((from.path).match(/posts/)) {
-          this.transitionName = 'prev'
-        }
-        else {
-          this.transitionName = 'up'
-        }
       }
       else {
         this.$store.commit("isNotAtHome")
-        
-        if ((to.path).match(/posts/) || (to.path).match(/search/)) {
-          this.transitionName = 'next'
-        }
-        else {
-          this.transitionName = 'down'
-        }
+      }
+
+      if (from.path == "/" && (to.path).match(/posts/)) {
+        this.transitionName = 'next'
+      }
+      else if (from.path == "/" && (to.path).match(/search/)) {
+        this.transitionName = 'down'
+      }
+      else if ((from.path).match(/posts/) && to.path == "/") {
+        this.transitionName = 'prev'
+      }
+      else if ((from.path).match(/search/) && to.path == "/") {
+        this.transitionName = 'up'
+      }
+      else if ((from.path).match(/search/) && (to.path).match(/result/)) {
+        this.transitionName = 'next'
+      }
+      else if ((from.path).match(/result/) && (to.path).match(/search/)) {
+        this.transitionName = 'prev'
+      }
+      else if ((from.path).match(/result/) && (to.path).match(/posts/)) {
+        this.transitionName = 'next'
+      }
+      else if ((from.path).match(/posts/) && (to.path).match(/result/)) {
+        this.transitionName = 'prev'
       }
     }
+
   }
 }
 </script>
@@ -72,7 +84,7 @@ export default {
 .prev-enter-active, .prev-leave-active,
 .up-enter-active, .up-leave-active,
 .down-enter-active, .down-leave-active  {
-  transition: all .6s ease-out;
+  transition: all .3s ease-out;
 }
 
 /* prev -> right */
@@ -102,8 +114,6 @@ export default {
 .prev-leave-to {
   transform: translateX(100%);
 }
-
-
 
 .up-enter {
   transform: translateY(100%);
