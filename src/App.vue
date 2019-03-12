@@ -41,23 +41,26 @@ export default {
   },
   watch: {
     '$route': function (to, from) {
+      console.log(from.path,to.path)
       if (to.path == "/") {
         this.$store.commit("isAtHome")
+        
         if ((from.path).match(/posts/)) {
-          this.transitionName = 'next'
+          this.transitionName = 'prev'
         }
-        // else {
-        //   this.transitionName = 'slide-up'
-        // }
+        else {
+          this.transitionName = 'up'
+        }
       }
       else {
         this.$store.commit("isNotAtHome")
-        if ((to.path).match(/posts/)) {
-          this.transitionName = 'prev'
+        
+        if ((to.path).match(/posts/) || (to.path).match(/search/)) {
+          this.transitionName = 'next'
         }
-        // else {
-        //   this.transitionName = 'slide-down'
-        // }
+        else {
+          this.transitionName = 'down'
+        }
       }
     }
   }
@@ -66,7 +69,9 @@ export default {
 
 <style>
 .next-enter-active, .next-leave-active,
-.prev-enter-active, .prev-leave-active  {
+.prev-enter-active, .prev-leave-active,
+.up-enter-active, .up-leave-active,
+.down-enter-active, .down-leave-active  {
   transition: all .6s ease-out;
 }
 
@@ -96,6 +101,34 @@ export default {
 }
 .prev-leave-to {
   transform: translateX(100%);
+}
+
+
+
+.up-enter {
+  transform: translateY(100%);
+}
+.up-enter-to {
+  transform: translateY(0);
+}
+.up-leave {
+  transform: translateY(0);
+}
+.up-leave-to {
+  transform: translateY(-100%);
+}
+
+.down-enter {
+  transform: translateY(-100%);
+}
+.down-enter-to {
+  transform: translateY(0);
+}
+.down-leave {
+  transform: translateY(0);
+}
+.down-leave-to {
+  transform: translateY(100%);
 }
 
 
