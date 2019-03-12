@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8bb2a32f4666e7b3db60",
+    "revision": "87c382433c1e5194cc27",
     "url": "/pwa_test/css/app.038f0ce1.css"
   },
   {
-    "revision": "8bb2a32f4666e7b3db60",
-    "url": "/pwa_test/js/app.5abb3494.js"
+    "revision": "87c382433c1e5194cc27",
+    "url": "/pwa_test/js/app.0b9c7074.js"
   },
   {
     "revision": "2ad93938355308643483",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/pwa_test/js/chunk-vendors.c65d9f1a.js"
   },
   {
-    "revision": "31d2bfe6aa8ecfe1438a8a883901c4d1",
+    "revision": "d6810267e99a2340086aabad2e98f073",
     "url": "/pwa_test/index.html"
   },
   {
