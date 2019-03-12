@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition :name="sildeName">
+    <!-- <transition :name="sildeName"> -->
 
       <v-toolbar app :extended="!this.$store.state.ishome">
         <v-toolbar-side-icon v-if="this.$store.state.ishome" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -30,9 +30,9 @@
         </template>
 
       </v-toolbar>
-    </transition>
+    <!-- </transition> -->
 
-    <v-navigation-drawer app v-model="drawer" temporary absolute>
+    <v-navigation-drawer v-model="drawer" temporary absolute>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
       <v-list>
@@ -121,7 +121,6 @@ export default {
 
 <style>
 .up-enter-active, .up-leave-active {
-  transform: translate(0px, 0px);
   transition: transform 300ms ease-out;
 }
 .up-enter, .up-leave-to {

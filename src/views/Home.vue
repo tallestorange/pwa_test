@@ -1,7 +1,6 @@
 <template>
-  
+
   <v-content>
-    <v-flex>
     <v-layout justify-center>
       <v-flex xs11 sm9 md7>
         <div v-for="article in articles" style="margin: 8px;">
@@ -9,7 +8,6 @@
         </div>
       </v-flex>
     </v-layout>
-    </v-flex>
   </v-content>
   
 </template>

@@ -1,10 +1,13 @@
 <template>
+  
   <v-app :dark="this.$store.getters['darkColor']">
     <tool-bar></tool-bar>
-    <transition :name="transitionName">
-      <router-view/>
-    </transition>
+    
+      <transition :name="transitionName">
+      <router-view></router-view>
+      </transition>
   </v-app>
+  
 </template>
 
 <script>
@@ -17,7 +20,7 @@ export default {
   },
   data () {
     return {
-      transitionName: 'slide-left',
+      transitionName: 'next',
       registration: null
     }
   },
@@ -41,20 +44,20 @@ export default {
       if (to.path == "/") {
         this.$store.commit("isAtHome")
         if ((from.path).match(/posts/)) {
-          this.transitionName = 'slide-right'
+          this.transitionName = 'next'
         }
-        else {
-          this.transitionName = 'slide-up'
-        }
+        // else {
+        //   this.transitionName = 'slide-up'
+        // }
       }
       else {
         this.$store.commit("isNotAtHome")
         if ((to.path).match(/posts/)) {
-          this.transitionName = 'slide-left'
+          this.transitionName = 'prev'
         }
-        else {
-          this.transitionName = 'slide-down'
-        }
+        // else {
+        //   this.transitionName = 'slide-down'
+        // }
       }
     }
   }
@@ -64,6 +67,7 @@ export default {
 <style>
 .slide-left-enter-active, .slide-left-leave-active {
   transition: opacity 300ms ease-out;
+  top: 0px;
 }
 
 .slide-left-enter, .slide-left-leave-to {
@@ -72,6 +76,7 @@ export default {
 
 .slide-right-enter-active, .slide-right-leave-active {
   transition: opacity 300ms ease-out;
+  top: 0px;
 }
 
 .slide-right-enter, .slide-right-leave-to {
@@ -80,6 +85,7 @@ export default {
 
 .slide-up-enter-active, .slide-up-leave-active {
   transition: opacity 300ms ease-out;
+  top: 0px;
 }
 
 .slide-up-enter, .slide-up-leave-to {
@@ -88,10 +94,54 @@ export default {
 
 .slide-down-enter-active, .slide-down-leave-active {
   transition: opacity 300ms ease-out;
+  top: 0px;
 }
 
 .slide-down-enter, .slide-down-leave-to {
   opacity: 0;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  top: 0px;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.next-enter-active, .next-leave-active,
+.prev-enter-active, .prev-leave-active  {
+  transition: all .9s ease-out;
+}
+
+.next-enter {
+  transform: translateX(100%);
+}
+.next-enter-to {
+  transform: translateX(0);
+}
+.next-leave {
+  transform: translateX(0);
+  /* opacity: 1 */
+}
+.next-leave-to {
+  transform: translateX(-100%);
+  /* opacity: 0 */
+}
+
+
+.prev-enter {
+  transform: translateX(-100%);
+}
+.prev-enter-to {
+  transform: translateX(0);
+}
+.prev-leave {
+  transform: translateX(0);
+}
+.prev-leave-to {
+  transform: translateX(100%);
+}
+
 
 </style>
