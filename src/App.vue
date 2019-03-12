@@ -63,39 +63,35 @@ export default {
 
 <style>
 .slide-left-enter-active, .slide-left-leave-active {
-  transform: translate(0px, 0px);
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: opacity 300ms ease-out;
 }
 
 .slide-left-enter, .slide-left-leave-to {
-  transform: translateX(-100vw) translateX(0px);
+  opacity: 0;
 }
 
 .slide-right-enter-active, .slide-right-leave-active {
-  transform: translate(0px, 0px);
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: opacity 300ms ease-out;
 }
 
 .slide-right-enter, .slide-right-leave-to {
-  transform: translateX(100vw) translateX(0px);
+  opacity: 0;
 }
 
 .slide-up-enter-active, .slide-up-leave-active {
-  transform: translate(0px, 0px);
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: opacity 300ms ease-out;
 }
 
 .slide-up-enter, .slide-up-leave-to {
-  transform: translateY(100vw) translateY(0px);
+  opacity: 0;
 }
 
 .slide-down-enter-active, .slide-down-leave-active {
-  transform: translate(0px, 0px);
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: opacity 300ms ease-out;
 }
 
 .slide-down-enter, .slide-down-leave-to {
-  transform: translateY(-100vw) translateY(0px);
+  opacity: 0;
 }
 
 </style>

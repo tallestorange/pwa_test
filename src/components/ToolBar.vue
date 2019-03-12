@@ -68,14 +68,6 @@
           </v-list-tile-action>
         </v-list-tile>
 
-        <v-divider></v-divider>
-
-        <v-list-tile>
-          <v-list-tile-content>
-            <v-list-tile-title>Version: 0.1.8</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
       </v-list>
 
     </v-navigation-drawer>
@@ -88,7 +80,7 @@ export default {
   },
   data () {
     return {
-      sildeName: "slide-down",
+      sildeName: "down",
       drawer: false,
       nightMode: this.$store.getters['darkColor']
     }
@@ -102,11 +94,11 @@ export default {
     '$route': function (to, from) {
       if (to.path == "/") {
         this.$store.commit("isAtHome")
-        this.sildeName = "slide-down"
+        this.sildeName = "down"
       }
       else {
         this.$store.commit("isNotAtHome")
-        this.sildeName = "slide-up"
+        this.sildeName = "up"
       }
     },
     'nightMode': function(to, from) {
@@ -128,16 +120,18 @@ export default {
 </script>
 
 <style>
-.slide-up-enter, .slide-up-leave-active {
-  opacity: 0;
-  transition-duration:.8s;
-  -webkit-transform: translate(0, 56px);
-  transform: translate(0, 56px);
+.up-enter-active, .up-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 300ms ease-out;
 }
-.slide-down-leave-active, .slide-down-enter {
-  opacity: 0;
-  transition-duration:.8s;
-  -webkit-transform: translate(0, -56px);
-  transform: translate(0, -56px);
+.up-enter, .up-leave-to {
+  transform: translateY(56vh) translateY(0);
+}
+.down-enter-active, .down-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 300ms ease-out;
+}
+.down-enter, .down-leave-to {
+  transform: translateY(-56vh) translateY(0);
 }
 </style>
